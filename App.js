@@ -25,7 +25,8 @@ import Background from './src/data/backgrounds/Background';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HiddenBar from './src/components/HiddenBar';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MainNavigation from './src/screens/MainNavigation.js';
+import MainNavigation from './src/screens/MainNavigation';
+import TestFlatList from './src/util/TestFlatList';
 
 const Header = props => {
   return (
@@ -63,6 +64,7 @@ const App: () => Node = () => {
     //   </ScrollView>
     // </SafeAreaView>
     <MainNavigation></MainNavigation>
+    //<TestFlatList></TestFlatList>
   );
 };
 

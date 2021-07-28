@@ -3,6 +3,7 @@ import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Background from '../../src/data/backgrounds/Background';
+import TestFlatList from '../../src/util/TestFlatList';
 
 function HomeScreen({navigation}) {
   return (
@@ -17,9 +18,27 @@ function DetailScreen({navigation}) {
   return (
     <Background>
       <Button title="Go back" onPress={() => navigation.goBack()} />
-      <Button title="Detail1" onPress={() => navigation.push('Detail1')} />
+      <View style={{padding: 10}}></View>
+      <Button title="FlatList" onPress={() => navigation.push('FlatList')} />
       {/* <Button title="Home" onPress={() => navigation.navigate('Home')}></Button> */}
     </Background>
+  );
+}
+
+function FlatList({navigation}) {
+  return (
+    // <View
+    //   style={{
+    //     flex: 1,
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: 'yellow',
+    //   }}>
+    //   <Button title="First screen" onPress={() => navigation.popToTop()} />
+    // </View>
+    <View style={{flex: 1}}>
+      <TestFlatList />
+    </View>
   );
 }
 
@@ -35,7 +54,7 @@ function MainNavigation() {
           options={{title: 'Overview'}}
         />
         <Stack.Screen name="Detail" component={DetailScreen} />
-        <Stack.Screen name="Detail1" component={DetailScreen} />
+        <Stack.Screen name="FlatList" component={FlatList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
